@@ -18,7 +18,7 @@ void setup(void) {
 }
 
 void loop() {
-if(!digitalRead(STEERSW_PIN))                    // If pin 2 is low, read receive buffer
+if(!digitalRead(STEERSW_PIN))                    // If pin 6 is low, read receive buffer
     {
       if ( K_Bus.read(msg) ) {
         Serial.print("Kbus;"); 
