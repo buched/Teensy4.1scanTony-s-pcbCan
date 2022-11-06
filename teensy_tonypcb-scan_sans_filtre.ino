@@ -28,6 +28,7 @@ if(!digitalRead(STEERSW_PIN))                    // If pin 2 is low, read receiv
         for ( uint8_t i = 0; i < 8; i++ ) {
           Serial.print(msg.buf[i]); Serial.print(";");
         }
+        Serial.println("");
       }
       else if ( ISO_Bus.read(msg) ) {
         Serial.print("Isobus;"); 
@@ -37,6 +38,7 @@ if(!digitalRead(STEERSW_PIN))                    // If pin 2 is low, read receiv
         for ( uint8_t i = 0; i < 8; i++ ) {
           Serial.print(msg.buf[i]); Serial.print(" ");
         }
+        Serial.println("");
       }
       else if ( V_Bus.read(msg) ) {
         Serial.print("valvebus;"); 
@@ -46,6 +48,7 @@ if(!digitalRead(STEERSW_PIN))                    // If pin 2 is low, read receiv
         for ( uint8_t i = 0; i < 8; i++ ) {
           Serial.print(msg.buf[i]); Serial.print(" ");
         }
+      Serial.println("");
       }
     }
 }
