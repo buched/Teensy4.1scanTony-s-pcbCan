@@ -6,7 +6,7 @@ CAN_message_t msg;
 
 #define STEERSW_PIN 6 //PD6
 uint8_t currentState = 1, reading, previous = 0;
-uint8_t steerSwitch = 1;
+uint8_t steerSwitch = 0;
 
 void setup(void) {
   K_Bus.begin();
