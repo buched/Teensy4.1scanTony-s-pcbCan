@@ -5,6 +5,8 @@ FlexCAN_T4<CAN3, RX_SIZE_256, TX_SIZE_16> V_Bus;    //Steering Valve Bus
 CAN_message_t msg;
 
 #define STEERSW_PIN 6 //PD6
+uint8_t currentState = 1, reading, previous = 0;
+uint8_t steerSwitch = 1;
 
 void setup(void) {
   K_Bus.begin();
@@ -18,7 +20,22 @@ void setup(void) {
 }
 
 void loop() {
-if(!digitalRead(STEERSW_PIN))                    // If pin 6 is low, read receive buffer
+reading = digitalRead(STEERSW_PIN);
+      if (reading == LOW && previous == HIGH)
+      {
+        if (currentState == 1)
+        {
+          currentState = 0;
+          steerSwitch = 0;
+        }
+        else
+        {
+          currentState = 1;
+          steerSwitch = 1;
+        }
+      }
+      previous = reading;
+if(steerSwitch == 1)                    // If pin 6 is low, read receive buffer
     {
       if ( K_Bus.read(msg) ) {
         Serial.print("Kbus;"); 
