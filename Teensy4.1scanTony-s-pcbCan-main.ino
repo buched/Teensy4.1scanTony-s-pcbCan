@@ -38,30 +38,30 @@ reading = digitalRead(STEERSW_PIN);
 if(steerSwitch == 1)                    // If pin 6 is low, read receive buffer
     {
       if ( K_Bus.read(msg) ) {
-        Serial.print("Kbus;"); 
-        Serial.print("MB;"); Serial.print(msg.mb);
-        Serial.print("ID;0x"); Serial.print(msg.id, HEX);
-        Serial.print(" DATA;");
+        Serial.print("Kbus,"); 
+        Serial.print("MB,"); Serial.print(msg.mb);
+        Serial.print("ID,0x"); Serial.print(msg.id, HEX);
+        Serial.print(" DATA,");
         for ( uint8_t i = 0; i < 8; i++ ) {
           Serial.print(msg.buf[i]); Serial.print(",");
         }
         Serial.println("");
       }
       else if ( ISO_Bus.read(msg) ) {
-        Serial.print("Isobus;"); 
-        Serial.print("MB;"); Serial.print(msg.mb);
-        Serial.print("ID;0x"); Serial.print(msg.id, HEX);
-        Serial.print(" DATA;");
+        Serial.print("Isobus,"); 
+        Serial.print("MB,"); Serial.print(msg.mb);
+        Serial.print("ID,0x"); Serial.print(msg.id, HEX);
+        Serial.print(" DATA,");
         for ( uint8_t i = 0; i < 8; i++ ) {
           Serial.print(msg.buf[i]); Serial.print(",");
         }
         Serial.println("");
       }
       else if ( V_Bus.read(msg) ) {
-        Serial.print("valvebus;"); 
-        Serial.print("MB;"); Serial.print(msg.mb);
-        Serial.print("ID;0x"); Serial.print(msg.id, HEX);
-        Serial.print(" DATA;");
+        Serial.print("valvebus,"); 
+        Serial.print("MB,"); Serial.print(msg.mb);
+        Serial.print("ID,0x"); Serial.print(msg.id, HEX);
+        Serial.print(" DATA,");
         for ( uint8_t i = 0; i < 8; i++ ) {
           Serial.print(msg.buf[i]); Serial.print(",");
         }
