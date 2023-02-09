@@ -11,6 +11,7 @@ uint8_t steerSwitch = 0;
 void setup(void) {
   K_Bus.begin();
   K_Bus.setBaudRate(250000);
+  //if fendt, use 500000 in place of 250000
   ISO_Bus.begin();
   ISO_Bus.setBaudRate(250000);
   V_Bus.begin();
