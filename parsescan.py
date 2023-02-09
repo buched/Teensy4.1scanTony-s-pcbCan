@@ -6,5 +6,5 @@ with open('bouton.txt', 'r') as file:
     line_counts = collections.Counter(lines)
     with open("boutonOutput.txt", "w") as output_file:
         for line, count in line_counts.items():
-            if count == 2:
+            if count == 3:
                 output_file.write(line)
