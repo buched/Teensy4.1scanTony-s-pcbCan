@@ -6,3 +6,4 @@ Copy paste all data in serial monitor in .txt file and begin happy to find ^^
 
 add , character for parse data in excel
 works with @MechanicTony pcb
+09/02/23 : add python script . thanks Ma Fi
