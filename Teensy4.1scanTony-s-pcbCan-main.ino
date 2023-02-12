@@ -42,7 +42,7 @@ if(steerSwitch == 1)                    // If pin 6 is low, read receive buffer
         Serial.print("Kbus,"); 
         Serial.print("MB,"); Serial.print(msg.mb);
         Serial.print("ID,0x"); Serial.print(msg.id, HEX);
-        Serial.print("DATA,");
+        Serial.print(",DATA,");
         for ( uint8_t i = 0; i < 8; i++ ) {
           Serial.print(msg.buf[i]); Serial.print(",");
         }
