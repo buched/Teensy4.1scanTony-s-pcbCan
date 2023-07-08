@@ -4,7 +4,7 @@ FlexCAN_T4<CAN2, RX_SIZE_256, TX_SIZE_16> ISO_Bus;  //ISO Bus
 FlexCAN_T4<CAN3, RX_SIZE_256, TX_SIZE_16> V_Bus;    //Steering Valve Bus
 CAN_message_t msg;
 
-#define STEERSW_PIN 32 // tonys can pcb = 6   aio = 32
+#define STEERSW_PIN 6 // tonys can pcb = 6   aio = 32
 uint8_t currentState = 1, reading, previous = 0;
 uint8_t steerSwitch = 0;
 
