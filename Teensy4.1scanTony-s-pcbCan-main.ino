@@ -36,8 +36,8 @@ reading = digitalRead(STEERSW_PIN);
         }
       }
       previous = reading;
-if(steerSwitch == 1)                    // If pin 6 is low, read receive buffer
-    {
+//if(steerSwitch == 1)                    // If pin 6 is low, read receive buffer
+   // {
       if ( K_Bus.read(msg) ) {
         Serial.print("Kbus,"); 
         Serial.print("MB,"); Serial.print(msg.mb);
@@ -68,5 +68,5 @@ if(steerSwitch == 1)                    // If pin 6 is low, read receive buffer
         }
       Serial.println("");
       }
-    }
+    // }
 }
